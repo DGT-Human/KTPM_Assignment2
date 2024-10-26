@@ -144,4 +144,88 @@ class TestRegister:
         time.sleep(3)
         message = driver.find_element(By.XPATH, "/html/body/div").text
         assert "You must agree to the Privacy Policy!" in message
+class TestLogin:
+    def test_login(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        time.sleep(5)
+        driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(10)
+        driver.find_element(By.XPATH, "//a[contains(text(), 'Login')]").click()
+        time.sleep(3)
+        email_input = driver.find_element(By.ID, "input-email")
+        email_input.send_keys("b@b.com")
+        password_input = driver.find_element(By.ID, "input-password")
+        password_input.send_keys("12345")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
+        time.sleep(3)
+        message = driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/h2[1]").text
+        assert "My Account" in message
 
+    def test_login_invalid_email(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        time.sleep(5)
+        driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(10)
+        driver.find_element(By.XPATH, "//a[contains(text(), 'Login')]").click()
+        time.sleep(3)
+        email_input = driver.find_element(By.ID, "input-email")
+        email_input.send_keys("")
+        password_input = driver.find_element(By.ID, "input-password")
+        password_input.send_keys("12345")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
+        time.sleep(3)
+        message = driver.find_element(By.XPATH, "/html/body/div").text
+        assert "Warning: No match for E-Mail Address and/or Password." in message
+
+    def test_login_invalid_password(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        time.sleep(5)
+        driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(10)
+        driver.find_element(By.XPATH, "//a[contains(text(), 'Login')]").click()
+        time.sleep(3)
+        email_input = driver.find_element(By.ID, "input-email")
+        email_input.send_keys("b@b.com")
+        password_input = driver.find_element(By.ID, "input-password")
+        password_input.send_keys("")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
+        time.sleep(3)
+        message = driver.find_element(By.XPATH, "/html/body/div").text
+        assert "Warning: No match for E-Mail Address and/or Password." in message
+
+    def test_login_email_not_exist(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        time.sleep(5)
+        driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(10)
+        driver.find_element(By.XPATH, "//a[contains(text(), 'Login')]").click()
+        time.sleep(3)
+        email_input = driver.find_element(By.ID, "input-email")
+        email_input.send_keys("d@d.com")
+        password_input = driver.find_element(By.ID, "input-password")
+        password_input.send_keys("12345")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
+        time.sleep(3)
+        message = driver.find_element(By.XPATH, "/html/body/div").text
+        assert "Warning: No match for E-Mail Address and/or Password." in message
+
+    def test_login_password_not_exist(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        time.sleep(5)
+        driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(10)
+        driver.find_element(By.XPATH, "//a[contains(text(), 'Login')]").click()
+        time.sleep(3)
+        email_input = driver.find_element(By.ID, "input-email")
+        email_input.send_keys("b@b.com")
+        password_input = driver.find_element(By.ID, "input-password")
+        password_input.send_keys("123456")
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
+        time.sleep(3)
+        message = driver.find_element(By.XPATH, "/html/body/div").text
+        assert "Warning: No match for E-Mail Address and/or Password." in message
