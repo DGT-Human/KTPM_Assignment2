@@ -1,7 +1,6 @@
 import time
-from Assignment.src.pages.base_page import BasePage
-from Assignment.src.driver.driver import Driver
-from Assignment.src.pages.register_page import RegisterPage
+from src.driver.driver import Driver
+from src.pages.register_page import RegisterPage
 
 
 class TestRegister(Driver):

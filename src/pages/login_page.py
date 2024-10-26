@@ -21,9 +21,19 @@ class LoginPage(BasePage):
         self.driver.find_element(By.XPATH, "//button[@type='submit' and contains(@class, 'btn-primary')]").click()
         time.sleep(3)
 
+    def logout(self):
+        self.driver.find_element(By.XPATH, "//a[contains(@class, 'dropdown-toggle') and contains(., 'My Account')]").click()
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, "//a[contains(text(), 'Logout')]").click()
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/div/a").click()
+
     def get_message_login(self):
         message = self.driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/h2[1]").text
         return message
 
     def get_error_message(self):
         return self.driver.find_element(By.XPATH, "/html/body/div").text
+
+
+
