@@ -8,6 +8,7 @@ OpenCart là một nền tảng thương mại điện tử mã nguồn mở, ch
 
 ### 1. Yêu Cầu Phần Mềm
 - **PHP**: Phiên bản 8.2 hoặc cao hơn.
+- **Python**: Phiên bản 3.12 hoặc 3.9 trở lên
   
 ### 2. Yêu Cầu Cơ Sở Dữ Liệu
 - **MySQL**: Phiên bản 5.5 hoặc cao hơn.
