@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
-from .base_page import BasePage
-from .Navigation import Navigation
+from src.pages.base_page import BasePage
+from src.pages.Navigation import Navigation
 
 class DataValidation(BasePage):
 

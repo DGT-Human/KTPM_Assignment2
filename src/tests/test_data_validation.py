@@ -1,6 +1,5 @@
-import time
 from src.driver.driver import Driver
-from src.pages.data_validation import DataValidation
+from src.pages.data_valid.data_validation import DataValidation
 from src.pages.Navigation import Navigation
 class TestDataValidation(Driver):
     def test_data_validation_show_all_desktops(self, driver):
