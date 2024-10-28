@@ -1,7 +1,6 @@
 import time
 from src.driver.driver import Driver
 from src.pages.Navigation import Navigation
-
 class TestNavigation(Driver):
     def test_navigation_desktop(self, driver):
         driver.get("http://localhost/opencart/upload/")
