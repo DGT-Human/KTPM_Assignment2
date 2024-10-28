@@ -14,6 +14,7 @@ class Navigation(BasePage):
     def get_success_show_all_desktops(self):
         return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[1]')).get_attribute('class')
 
+
     def go_to_pc(self):
         self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[1]/div/div/ul/li[1]/a").click()
         time.sleep(3)
@@ -93,9 +94,51 @@ class Navigation(BasePage):
     def get_success_go_to_scanners(self):
         return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[7]')).get_attribute('class')
 
-    def go_to_cameras(self):
+    def go_to_web_cameras(self):
         self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[3]/div/div/ul/li[5]/a").click()
         time.sleep(3)
 
-    def get_success_go_to_cameras(self):
+    def get_success_go_to_web_cameras(self):
         return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[8]')).get_attribute('class')
+
+    def go_to_tablets(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[4]/a").click()
+        time.sleep(3)
+
+    def get_success_go_to_tablets(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[4]')).get_attribute('class')
+
+    def go_to_software(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[5]/a").click()
+        time.sleep(3)
+
+    def get_success_go_to_software(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[5]')).get_attribute('class')
+
+    def go_to_phones_and_PDAs(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[6]/a").click()
+        time.sleep(3)
+
+    def get_success_go_to_phones_and_PDAs(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[6]')).get_attribute('class')
+
+    def go_to_cameras(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[7]/a").click()
+        time.sleep(3)
+
+    def get_success_go_to_cameras(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[7]')).get_attribute('class')
+
+    def go_to_mp3(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[8]/a").click()
+        time.sleep(3)
+
+    def go_to_show_all_mp3(self):
+        self.driver.find_element(By.XPATH, "/html/body/main/div[1]/nav/div[2]/ul/li[8]/div/a").click()
+        time.sleep(3)
+
+    def get_success_go_to_mp3(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/aside/div[1]/a[8]')).get_attribute('class')
+
+    def get_label(self):
+        return self.driver.find_element(By.XPATH, ('/html/body/main/div[2]/div/div/h2')).text
