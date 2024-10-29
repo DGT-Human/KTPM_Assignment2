@@ -2,5 +2,9 @@ from .driver.driver import Driver
 from .pages.base_page import BasePage
 from .pages.login_page import LoginPage
 from .pages.register_page import RegisterPage
+from .pages.data_valid.data_validation import DataValidation
 from .tests.test_login import TestLogin
 from .tests.test_register import TestRegister
+from .tests.test_data_validation import TestDataValidation
+from .tests.test_add_to_cart import TestAddToCart
+from .tests.test_checkout import TestCheckout

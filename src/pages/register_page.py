@@ -39,5 +39,5 @@ class RegisterPage(BasePage):
     def get_error_message_lastname(self):
         return self.driver.find_element(By.XPATH, "/html/body/main/div[2]/div/div/form/fieldset[1]/div[2]/div/div").text
 
-    def get_error_message_agree(self):
+    def get_error_message(self):
         return self.driver.find_element(By.XPATH, "/html/body/div").text

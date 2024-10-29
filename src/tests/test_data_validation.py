@@ -1,6 +1,8 @@
 from src.driver.driver import Driver
 from src.pages.data_valid.data_validation import DataValidation
 from src.pages.Navigation import Navigation
+
+
 class TestDataValidation(Driver):
     def test_data_validation_show_all_desktops(self, driver):
         driver.get("http://localhost/opencart/upload/")
@@ -79,4 +81,23 @@ class TestDataValidation(Driver):
         data_validation = DataValidation(driver)
         displayed_product_names = data_validation.data_validation_show_product()
         expected_product_names = ['HTC Touch HD', 'Palm Treo Pro', 'iPhone']
+        assert set(displayed_product_names) == set(expected_product_names), f"Expected {expected_product_names}, but got {displayed_product_names}"
+
+    def test_data_validation_show_all_cameras(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        navigation = Navigation(driver)
+        navigation.go_to_cameras()
+        data_validation = DataValidation(driver)
+        displayed_product_names = data_validation.data_validation_show_product()
+        expected_product_names = ['Nikon D300', 'Canon EOS 5D']
+        assert set(displayed_product_names) == set(expected_product_names), f"Expected {expected_product_names}, but got {displayed_product_names}"
+
+    def test_data_validation_show_all_mp3_players(self, driver):
+        driver.get("http://localhost/opencart/upload/")
+        navigation = Navigation(driver)
+        navigation.go_to_mp3()
+        navigation.go_to_show_all_mp3()
+        data_validation = DataValidation(driver)
+        displayed_product_names = data_validation.data_validation_show_product()
+        expected_product_names = ['iPod Classic', 'iPod Nano', 'iPod Shuffle', 'iPod Touch']
         assert set(displayed_product_names) == set(expected_product_names), f"Expected {expected_product_names}, but got {displayed_product_names}"
