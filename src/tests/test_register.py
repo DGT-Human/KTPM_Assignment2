@@ -43,8 +43,39 @@ class TestRegister(Driver):
         register_page.go_to_register()
         register_page.fill_registration_form("Nguyen", "B", "b@b.com", "12345", False)
         time.sleep(3)
-        message = register_page.get_error_message_agree()
+        message = register_page.get_error_message()
         assert "You must agree to the Privacy Policy!" in message
 
+    def test_register_password_to_long(self, driver):
+        register_page = RegisterPage(driver)
+        register_page.go_to_register()
+        register_page.fill_registration_form("Nguyen", "B", "b@b.com", "12345678313123123123131901234567890")
+        time.sleep(3)
+        message = register_page.get_error_message_password()
+        assert "Password must be between 4 and 20 characters!" in message
 
+    def test_register_password_to_short(self, driver):
+        register_page = RegisterPage(driver)
+        register_page.go_to_register()
+        register_page.fill_registration_form("Nguyen", "B", "b@b.com", "12")
+        time.sleep(3)
+        message = register_page.get_error_message_password()
+        assert "Password must be between 4 and 20 characters!" in message
 
+    def test_register_name_to_long(self, driver):
+        register_page = RegisterPage(driver)
+        register_page.go_to_register()
+        register_page.fill_registration_form("dadadadadaddadadadadadadaaaaadddddadadaaaaaaaaaaaaadadadada", "dddddddddaaaaaaaaaaaaaaaaddddddddddddddddddddaaaaaaaaaaaaaaaaaaasssssssssa", "b@b.com", "12345")
+        time.sleep(3)
+        message1 = register_page.get_error_message_firstname()
+        message2 = register_page.get_error_message_lastname()
+        assert "First Name must be between 1 and 32 characters!" in message1
+        assert "Last Name must be between 1 and 32 characters!" in message2
+
+    def test_register_email_exist(self, driver):
+        register_page = RegisterPage(driver)
+        register_page.go_to_register()
+        register_page.fill_registration_form("Nguyen", "B", "b@b.com", "12345")
+        time.sleep(3)
+        message = register_page.get_error_message()
+        assert "Warning: E-Mail Address is already registered!" in message

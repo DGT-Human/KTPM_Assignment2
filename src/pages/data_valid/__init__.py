@@ -1,1 +1,1 @@
-from data_validation import DataValidation
+from .data_validation import DataValidation
