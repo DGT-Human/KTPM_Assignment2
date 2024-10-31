@@ -43,7 +43,9 @@ OpenCart là một nền tảng thương mại điện tử mã nguồn mở, ch
    - Đặt WebDriver vào thư mục đã thêm vào PATH hoặc chỉ định đường dẫn trong script của bạn.
      
 4. **Chạy chương trình**
-   - ví dụ: test_login.py 
+   - Clone source code về, vào folder tests sẽ có các file test các chức năng.
+   - Ví dụ: test_login.py 
    ```bash
      python test_login.py
      ```
+   Sẽ chạy file test_login
