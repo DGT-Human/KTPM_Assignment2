@@ -1,8 +1,8 @@
 # KTPM_Assignment-2_
 
 ## Giới thiệu:
-Do một số vấn đề về Web Demo trên mạng nên em đã cài đặt Web OpenCart về chạy Localhost.
-OpenCart là một nền tảng thương mại điện tử mã nguồn mở, cho phép bạn xây dựng và quản lý cửa hàng trực tuyến dễ dàng. Hướng dẫn này bao gồm các bước cài đặt OpenCart và cấu hình môi trường kiểm thử với Selenium.
+- Do một số vấn đề về Web Demo trên mạng nên em đã cài đặt Web OpenCart về chạy Localhost.
+- OpenCart là một nền tảng thương mại điện tử mã nguồn mở, cho phép bạn xây dựng và quản lý cửa hàng trực tuyến dễ dàng. Hướng dẫn này bao gồm các bước cài đặt OpenCart và cấu hình môi trường kiểm thử với Selenium.
 
 ## Yêu Cầu Hệ Thống
 
