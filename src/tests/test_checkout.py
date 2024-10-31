@@ -20,7 +20,7 @@ class TestCheckout(Driver):
         # Chọn tùy chọn khách hàng không đăng nhập hoặc đăng ký
         checkout.click_guest_checkout()
         # Điền thông tin checkout vào
-        checkout.set_checkout_guest_checkbox("Tien", "Du", "nqqqq@gmail.com", "SG", "145/5", "address2", "HCM", "12345", "Viet Nam", "Ho Chi Minh City", True)
+        checkout.set_checkout_guest_checkbox("Tien", "Du", "nqqqqqqhh@gmail.com", "SG", "145/5", "address2", "HCM", "12345", "Viet Nam", "Ho Chi Minh City", True)
         # Chọn tiếp tục để lưu thông tin
         checkout.click_continue_button()
         # Chọn phương thức vận chuyển
@@ -44,7 +44,7 @@ class TestCheckout(Driver):
         checkout.click_checkout()
 
         # Tùy chọn khách hàng muốn đăng ký
-        checkout.set_checkout_register_checkbox("Tien", "Du", "yqqqq@gmail.com", "SG", "145/5", "address2", "HCM", "12345", "Viet Nam", "Ho Chi Minh City", 123456, True, True)
+        checkout.set_checkout_register_checkbox("Tien", "Du", "yqqqqqqhh@gmail.com", "SG", "145/5", "address2", "HCM", "12345", "Viet Nam", "Ho Chi Minh City", 123456, True, True)
         checkout.click_continue_button()
         checkout.choose_shipping_method()
         checkout.choose_payment_method()
