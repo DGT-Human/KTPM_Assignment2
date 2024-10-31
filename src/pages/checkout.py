@@ -9,7 +9,7 @@ class Checkout(BasePage, Select):
 
     # Click vào nút giỏ hàng
     def click_shopping_cart(self):
-        time.sleep(2)
+        time.sleep(4)
         self.driver.find_element(By.XPATH, "/html/body/nav/div/div[2]/ul/li[4]/a").click()
         time.sleep(3)
 

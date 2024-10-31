@@ -8,4 +8,3 @@ from src.tests.test_register import TestRegister
 from src.tests.test_data_validation import TestDataValidation
 from src.tests.test_add_to_cart import TestAddToCart
 from src.tests.test_checkout import TestCheckout
-from src.batch_execution import run_batch_tests

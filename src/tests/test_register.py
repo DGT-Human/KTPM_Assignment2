@@ -15,7 +15,7 @@ class TestRegister(Driver):
         register_page.go_to_register()
 
         # Điền thông tin đăng ký hợp lệ
-        register_page.fill_registration_form("Nguyen", "q", "q@qqqq.com", "12345")
+        register_page.fill_registration_form("Nguyen", "q", "qhgh@qqqq.com", "12345")
         time.sleep(3)
 
         # Lấy thông báo thành công
@@ -33,7 +33,7 @@ class TestRegister(Driver):
         register_page.go_to_register()
 
         # Điền thông tin đăng ký không hợp lệ (mật khẩu rỗng)
-        register_page.fill_registration_form("Nguyen", "B", "b@bbb.com", "")
+        register_page.fill_registration_form("Nguyen", "B", "bhh@bbb.com", "")
         time.sleep(3)
 
         # Lấy thông báo lỗi mật khẩu
@@ -69,7 +69,7 @@ class TestRegister(Driver):
         register_page.go_to_register()
 
         # Điền thông tin đăng ký không hợp lệ (tên trống)
-        register_page.fill_registration_form("", "", "b@bb.com", "12345")
+        register_page.fill_registration_form("", "", "b@bbb.com", "12345")
 
         # Chờ 3 giây để đảm bảo trang được tải đầy đủ
         time.sleep(3)

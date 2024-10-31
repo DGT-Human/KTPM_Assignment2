@@ -1,5 +1,4 @@
 import pytest
-
 from src.driver.driver import Driver
 from src.pages.Navigation import Navigation
 from src.pages.add_to_cart import AddToCart
