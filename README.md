@@ -48,4 +48,4 @@ OpenCart là một nền tảng thương mại điện tử mã nguồn mở, ch
    ```bash
      python test_login.py
      ```
-   Sẽ chạy file test_login
+   Sẽ bắt đầu chạy file test_login
