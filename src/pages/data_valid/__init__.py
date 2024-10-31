@@ -1,1 +1,1 @@
-from .data_validation import DataValidation
+from src.pages.data_valid.data_validation import DataValidation
