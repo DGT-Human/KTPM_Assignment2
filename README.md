@@ -17,7 +17,33 @@ OpenCart là một nền tảng thương mại điện tử mã nguồn mở, ch
 - **Web Server**: Apache.
 
 ### 4. Yêu Cầu Kiểm Thử Selenium
-- **Trình duyệt**: Chrome, Microsoft Edge hoặc bất kỳ trình duyệt nào hỗ trợ WebDriver.
-- **WebDriver**: ChromeDriver cho Chrome hoặc EdgeDriver cho Microsoft Edge.
+- **Trình duyệt**: Microsoft Edge, Firefox hoặc bất kỳ trình duyệt nào hỗ trợ WebDriver.
+- **WebDriver**: GeckoDriver cho Firefox hoặc EdgeDriver cho Microsoft Edge.
 - **Ngôn ngữ lập trình**: Python Selenium.
 - **Thư viện Selenium**: Cài đặt thư viện Selenium cho ngôn ngữ lập trình.
+
+## Hướng dẫn cài đặt
+
+### Bước 1: Cài đặt OpenCart
+   - Truy cập trang web chính thức của OpenCart [openCart.com](https://www.opencart.com/) và tải phiên bản mới nhất về.
+   - Và làm theo hướng dẫn ở [Youtube](https://www.youtube.com/watch?v=GftTTFm58d8)
+
+### Bước 2: Cài đặt Selenium
+
+1. **Cài đặt Python**:
+   - Tải và cài đặt Python từ [python.org](https://www.python.org/downloads/).
+
+2. **Cài đặt thư viện Selenium**:
+   - Mở terminal và chạy lệnh sau để cài đặt thư viện Selenium:
+     ```bash
+     pip install selenium
+     ```
+3. **Tải và cài đặt WebDriver**:
+   - Tải [GeckoDriver](https://github.com/mozilla/geckodriver/releases) cho Firefox hoặc [EdgeDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/) cho Microsoft Edge.
+   - Đặt WebDriver vào thư mục đã thêm vào PATH hoặc chỉ định đường dẫn trong script của bạn.
+     
+4. **Chạy chương trình**
+   - ví dụ: test_login.py 
+   ```bash
+     python test_login.py
+     ```
